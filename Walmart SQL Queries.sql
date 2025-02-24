@@ -25,13 +25,14 @@ rating FLOAT(2, 1)
 SHOW GLOBAL VARIABLES LIKE 'local_infile';
 SET GLOBAL local_infile = 1;
 
-LOAD DATA LOCAL INFILE 
-'/Users/mohammedshehbazdamkar/Downloads/WalmartSalesData.csv.csv'
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/walmart_sales.csv'
 INTO TABLE sales
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
+ALTER TABLE sales MODIFY COLUMN rating INT;
 
 
 ------------------- Feature Engineering -----------------------------
